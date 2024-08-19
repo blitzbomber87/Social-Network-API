@@ -32,7 +32,7 @@ Video Walkthrough here....
 
 Server is uup and running!
 
-![server]
+![server](https://github.com/user-attachments/assets/4dfaf788-5cbf-47c1-bfe6-859080ddab05)
 
 Get Routes
 
