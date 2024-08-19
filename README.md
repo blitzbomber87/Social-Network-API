@@ -25,7 +25,7 @@ SO THAT my website can handle large amounts of unstructured data
 
 ## Usage
 
-Video Walkthrough here....
+Video Walkthrough here....https://drive.google.com/file/d/1FBVjHHoLjgUF-_PTT5hiIJCycm1a4nE8/view
 
 1. Run command "node server.js" to start up backend and server.
 2. Test all your routes using insomnia or postman.
@@ -36,9 +36,15 @@ Server is uup and running!
 
 Get Routes
 
-![readme](https://github.com/user-attachments/assets/65cf8c3f-88ba-4d17-a1f9-3408eb97dadd)
+![getusers](https://github.com/user-attachments/assets/c3404de3-bbf2-4697-82ea-b7ad9f2852d5)
 
-![morereadme](https://github.com/user-attachments/assets/b1e54b9e-4820-40e6-a596-0bce2e8ef663)
+Get Thoughts
+
+![getthoughts](https://github.com/user-attachments/assets/34adea5a-b83b-45fd-9636-6205a660268e)
+
+Create User
+
+![createuser](https://github.com/user-attachments/assets/e3de1016-ba15-4a38-b114-86d60800e584)
 
 
 ## Credits
