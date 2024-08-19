@@ -1,66 +1,44 @@
 const { Schema, model, Types } = require('mongoose');
 
-const reactionSchema = new Schema(
+const userSchema = new Schema(
   {
-    reactionId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
-    reactionBody: {
-      type: String,
-      required: true,
-      maxlength: 280,
-    },
     username: {
       type: String,
+      unique: true,
       required: true,
+      trim: true,
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => new Date(timestamp).toISOString(),
-    },
-  },
-  {
-    toJSON: {
-      getters: true,
-    },
-    id: false,
-  }
-);
-
-const thoughtSchema = new Schema(
-  {
-    thoughtText: {
+    email: {
       type: String,
       required: true,
-      minlength: 1,
-      maxlength: 280,
+      unique: true,
+      match: [/.+@.+\..+/, 'Please enter a valid email address'],
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (timestamp) => new Date(timestamp).toISOString(),
-    },
-    username: {
-      type: String,
-      required: true,
-    },
-    reactions: [reactionSchema],
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Thought',
+      },
+    ],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
   },
   {
     toJSON: {
       virtuals: true,
-      getters: true,
     },
     id: false,
   }
 );
 
-thoughtSchema.virtual('reactionCount').get(function () {
-  return this.reactions.length;
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length;
 });
 
-const Thought = model('Thought', thoughtSchema);
+const User = model('User', userSchema);
 
-module.exports = Thought;
+module.exports = User;
